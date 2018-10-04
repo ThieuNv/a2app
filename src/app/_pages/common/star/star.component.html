@@ -1,0 +1,20 @@
+<div class="star_wrapper">
+
+  <h3>Rate for Us</h3>
+  Star:
+  <span>
+          <i class="fa fa-3x"
+             [class.fa-star-o]="!isFavoriteStar"
+             [class.fa-star]="isFavoriteStar"
+             (click)="onClickStar()"
+          ></i>
+  </span>
+
+  <span>
+          <i class="fa fa-3x fa-heart"
+             [class.hightlightHeart]="isFavoriteHeart"
+             (click)="onClickHeart()"
+          ></i>
+  </span>
+
+</div>

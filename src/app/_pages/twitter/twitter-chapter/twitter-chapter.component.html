@@ -1,0 +1,19 @@
+<div class="twitter_chapter_wrapper">
+  <div class="twitter_chapter_title"
+    (click)="toggleChapter()"
+  >
+    {{ title }}
+    <i class="pull-right fa"
+      [ngClass]="
+      {
+        'fa-arrow-down': isExpanded,
+        'fa-arrow-up': !isExpanded
+      }"
+    >
+    </i>
+  </div>
+
+  <div *ngIf="isExpanded" class="twitter_chapter_content">
+    <ng-content></ng-content>
+  </div>
+</div>

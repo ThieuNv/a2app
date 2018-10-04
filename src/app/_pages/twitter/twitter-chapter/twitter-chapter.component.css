@@ -1,0 +1,19 @@
+.twitter_chapter_wrapper {
+  border: 1px solid #ccc;
+  border-radius: 2px;
+}
+
+.twitter_chapter_title {
+  padding: 20px;
+  font-weight: bold;
+  background-color: #ccc;
+}
+
+.twitter_chapter_title:hover{
+  background: #f0f0f0;
+  cursor: pointer;
+}
+
+.twitter_chapter_content {
+  padding: 20px;
+}

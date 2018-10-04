@@ -1,0 +1,69 @@
+<div id="contact_wrapper">
+  <div class="row">
+      <div class="col-xs-6 col-lg-6">
+        <h3>List Address</h3>
+        <ul>
+          <li *ngFor="let addr of listAddress">{{ addr }}</li>
+        </ul>
+      </div>
+
+    <div class="col-xs-6 col-lg-6">
+      <h3>List Phone Numbers</h3>
+      <ul>
+        <li *ngFor="let phoneNum of listPhoneNumber">{{ phoneNum }}</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <div class="col-xs-6 col-lg-6">
+      <h3>Message to Us</h3>
+      <div class="form_wrapper">
+        <form>
+          <div class="input_group">
+            <label for="email">Email</label>
+            <input type="email" id="email"
+                   appAutoGrow
+                   [class.borderInput]="isBorder"
+                    [style.backgroundColor]="isBackground ? getBackground('red'): false"
+                   [style.color]="isColor ? getColor('white'): false"
+                   #email
+            />
+          </div>
+
+          <div *ngIf="email.valid">{{email.value}}</div>
+
+          <div class="input_group">
+            <button class="btn btn-primary" (click)="getEmail($event)">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-xs-6 col-lg-6">
+
+      <app-star
+        [isFavoriteStar]="post.isFavoriteStar"
+        (changeStar)="onStarChange($event)"
+
+        [isFavoriteHeart]="post.isFavoriteHeart"
+        (changeHeart)="onHeartChange($event)"
+      ></app-star>
+      <p>Number star: {{post.numberVoteStar}}</p>
+      <p>Number star: {{post.numberVoteHeart}}</p>
+
+      <hr/>
+
+      <app-vote [voteCount]="post.voteCount"
+                [myVote]="post.myVote"
+                (vote) = "onVoteChange($event)"
+      ></app-vote>
+
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,10 @@
+.vote_wrapper {
+  width: 20px;
+}
+
+.hightlightVote {
+  color: orange;
+}
+.fa-chevron-up, .fa-chevron-down {
+  cursor: pointer;
+}

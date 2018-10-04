@@ -1,0 +1,11 @@
+<div class="vote_wrapper">
+  <i class="fa fa-chevron-up fa-2x" aria-hidden="true"
+     [class.hightlightVote] = "myVote == 1"
+    (click)="onVoteUp()"
+  ></i>
+  <span>{{voteCount + myVote}}</span>
+  <i class="fa fa-chevron-down fa-2x" aria-hidden="true"
+     [class.hightlightVote] = "myVote == -1"
+     (click)="onVoteDown()"
+  ></i>
+</div>

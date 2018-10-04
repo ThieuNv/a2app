@@ -1,0 +1,18 @@
+<div class="twitter_box_wrapper">
+  <div class="media">
+    <img class="d-flex mr-3" [src]="twitterBox?.post_imageUrl" alt="Generic placeholder image">
+    <div class="media-body">
+      <h5 class="mt-0">{{twitterBox?.post_userName | capitalizeFirst}} @ {{twitterBox?.post_category}}</h5>
+      <p>{{twitterBox?.post_content | summary | capitalizeFirst }}</p>
+      <p>
+        <i [ngClass]="{
+            'fa': true,
+            'fa-heart': true,
+            'hightlightLike': isLike }"
+          (click)="onLikeTwitter()"
+        ></i>
+        <span>{{twitterBox?.post_countLike}}</span>
+      </p>
+    </div>
+  </div>
+</div>
